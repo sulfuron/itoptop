@@ -236,9 +236,9 @@ class Schema(object):
     def lookup(self, obj):
         """
 
-        Quando existir um campo externo no corpo do objeto, convertê-lo para uma chave externa.
-        Isso é necessário pois a API do iTop não inclui/atualiza itens contendo um campo externo,
-        somente com chave externa
+        When there is an external field in the object's body, convert it to a foreign key.
+        This is necessary because the iTop API does not include / update items containing an external field,
+        only with external key
 
         :param obj:
         :return:

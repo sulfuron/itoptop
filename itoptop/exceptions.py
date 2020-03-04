@@ -11,8 +11,8 @@ itop_error_codes = {
     5: "MISSING_AUTH_USER - The parameter 'auth_user' is missing",
     6: "MISSING_AUTH_PWD - The parameter 'auth_pwd' is missing",
     10: "UNSUPPORTED_VERSION - No operation is available for the specified version",
-    11: "UNKNOWN_OPERATION - The requested operation is not valid for the specelified version",
-    12: "UNSAFE - The requested operation cannot be performe because it can cause data (integrity) loss",
+    11: "UNKNOWN_OPERATION - The requested operation is not valid for the specified version",
+    12: "UNSAFE - The requested operation cannot be perform because it can cause data (integrity) loss",
     100: "INTERNAL_ERROR - The operation could not be performed, see the message for troubleshooting"
 }
 
@@ -34,6 +34,6 @@ class ItopError(requests.exceptions.ConnectionError):
         if return_code in itop_error_codes:
             itop_error = "%s %s." % (return_code, itop_error_codes[return_code])
         else:
-            itop_error = "UNKNOW_ERROR - Not specified by ITOP."
+            itop_error = "UNKNOWN_ERROR - Not specified by ITOP."
 
         super(ItopError, self).__init__(message + "\n" + itop_error)
